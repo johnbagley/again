@@ -1,7 +1,9 @@
 <h4><%= current_user.username %></h4>
 
-<%= form_for @shout do |shout| %>
+<%= form_for @shout do |form| %>
   <%= form.label :body, "Shout Here: " %>
   <%= form.text_field :body %>
   <%= form.submit "Shout" %>
 <% end %>
+<p>
+<%= render @shouts %>
