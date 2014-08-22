@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822175430) do
+ActiveRecord::Schema.define(version: 20140822181056) do
+
+  create_table "photo_shouts", force: true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "shouts", force: true do |t|
     t.integer  "user_id"
@@ -25,9 +32,7 @@ ActiveRecord::Schema.define(version: 20140822175430) do
   add_index "shouts", ["user_id"], name: "index_shouts_on_user_id"
 
   create_table "text_shouts", force: true do |t|
-    t.string   "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "body"
   end
 
   create_table "users", force: true do |t|
