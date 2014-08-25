@@ -1,0 +1,6 @@
+Users Index
+<% @users.each do |user| %>
+  <div>
+    <%= link_to user.username, user_path(user) %>
+  </div>
+<% end %>
