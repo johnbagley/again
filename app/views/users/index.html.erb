@@ -1,6 +1,7 @@
 Users Index
 <% @users.each do |user| %>
   <div>
+    <%= gravatar user %>
     <%= link_to user.username, user_path(user) %>
   </div>
 <% end %>
